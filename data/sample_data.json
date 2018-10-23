@@ -1,0 +1,104 @@
+[
+  {
+    "Scenario Number": 1,
+    "Item": "Concert Tickets",
+    "Cost": 125,
+    "Verbiage": "Your best friend invited you a concert to see your favorite artist, tickets are $125! Do you want to go with them?"
+  },
+  {
+    "Scenario Number": 2,
+    "Item": "Anniversary Dinner",
+    "Cost": 100,
+    "Verbiage": "It's your anniversary! You can spend an extra $100 and take your significant other to their favorite restaurant, would you like to treat them to their favorite meal?"
+  },
+  {
+    "Scenario Number": 3,
+    "Item": "Football Game",
+    "Cost": 175,
+    "Verbiage": "Your favorite football team is coming to town to play the Giants. Tickets are $175, do you want to go to the game?"
+  },
+  {
+    "Scenario Number": 4,
+    "Item": "Basketball Game",
+    "Cost": 150,
+    "Verbiage": "Your favorite basketball team is coming to town and playing in Madison Square Garden. Tickets are $150, do you want to go to the game?"
+  },
+  {
+    "Scenario Number": 5,
+    "Item": "Bachelor Party",
+    "Cost": 200,
+    "Verbiage": "Your best friend is having there bachelor(ette) party. The hotel room and travel is $200. Do you want to attend the partt?"
+  },
+  {
+    "Scenario Number": 6,
+    "Item": "Best Friends Birthday",
+    "Cost": 100,
+    "Verbiage": "It's your best friends birthday, dinner and drinks will cost you $100. Would you like to attend the party?"
+  },
+  {
+    "Scenario Number": 7,
+    "Item": "Yeezy's",
+    "Cost": 200,
+    "Verbiage": "A new pair of Yeezy's dropped this month and you have the rare opportunity to purchase them for $200. Do you want to buy them?"
+  },
+  {
+    "Scenario Number": 8,
+    "Item": "Spiderman",
+    "Cost": 65,
+    "Verbiage": "The new spiderman video game dropped this month, and the reviews say it is the best game of the year. You can purchase the game for $65 on Amazon. Do you want to buy it?"
+  },
+  {
+    "Scenario Number": 9,
+    "Item": "Going for drinking to a pub",
+    "Cost": 75,
+    "Verbiage": "Your friends are going for a drink at a pub. You can join them, but rounds will cost you $75. Do you want to go to the pub?"
+  },
+  {
+    "Scenario Number": 10,
+    "Item": "Buying a laptop backpack",
+    "Cost": 75,
+    "Verbiage": "Your backpack is getting old and the padding on the laptop sleeve lost it's cushion. You can purchase a new backpack for $75. Do you want to purchase a new backpack?"
+  },
+  {
+    "Scenario Number": 11,
+    "Item": "Date night dinner",
+    "Cost": 50,
+    "Verbiage": "It's date night! if you buy dinner for your date it will cost you an extra $50. Do you want to pay for dinner?"
+  },
+  {
+    "Scenario Number": 12,
+    "Item": "Prime day shopping",
+    "Cost": 175,
+    "Verbiage": "It's Prime Day on Amazon! All the deals are so amazing, you can get an echo dot and a bunch of other stuff for $175. Do you want to spend on Prime Day?"
+  },
+  {
+    "Scenario Number": 13,
+    "Item": "Winter jacket",
+    "Cost": 250,
+    "Verbiage": "Your winter jacket is 3 years old, and the threads are starting to fray. You can buy a new one on sale for $250, or stick with the old one for another year. Do you want to buy a new jacket?"
+  },
+  {
+    "Scenario Number": 14,
+    "Item": "Wedding",
+    "Cost": 200,
+    "Verbiage": "You're attending a friend's wedding, you can stay in the hotel with the wedding party or a cheaper hotel and save $200. Do you want to stay in the more expensive hotel?"
+  },
+  {
+    "Scenario Number": 15,
+    "Item": "Monthly groceries",
+    "Cost": 100,
+    "Verbiage": "You're buying groceries for the month, you can go to a discount grocery store and save $100 or you can buy your groceries from Whole Foods. Do you want to buy groceries from Whole Foods?"
+  },
+  {
+    "Scenario Number": 16,
+    "Item": "Bottles in the Club",
+    "Cost": 175,
+    "Verbiage": "All of your friends are splitting a table at the club, you can go out with them, and chip in $175, or stay home. Do you want to go to the club?"
+  },
+  {
+    "Scenario Number": 17,
+    "Item": "Wireless headphones",
+    "Cost": 135,
+    "Verbiage": "Your airpods broke. You can use your old apple headphones or buy a new pair for $135. Do you want to buy a new pair?"
+  }
+]

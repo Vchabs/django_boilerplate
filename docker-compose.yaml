@@ -1,0 +1,104 @@
+version: '3'
+
+services:
+  db:
+    environment:
+      - PGDATA= /var/lib/postgresql/data/pgdata
+    image: postgres
+    volumes: 
+      - ./postgres_data:/var/lib/postgresql/data/pgdata
+  makemigrations:
+    build: .
+    command: python3 manage.py makemigrations --settings=dev.settings.dev
+    environment:
+      - DEBUG=False
+      - DATABASE_ENGINE=django.db.backends.postgresql
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password #TODO set on postgres instance
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - SECRET_KEY=fsgsweoriqwevnzasdf43
+      - USER_ID='docker'    
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+  migrate:
+    build: .
+    command: python3 manage.py migrate --settings=dev.settings.dev
+    environment:
+      - DEBUG=False
+      - DATABASE_ENGINE=django.db.backends.postgresql
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password #TODO set on postgres instance
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - SECRET_KEY=fsgsweoriqwevnzasdf43
+      - USER_ID='docker'    
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+  load_sample_data:
+    build: .
+    command: python3 manage.py load_scenario_data
+    environment:
+      - DEBUG=False
+      - DATABASE_ENGINE=django.db.backends.postgresql
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password #TODO set on postgres instance
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - SECRET_KEY=fsgsweoriqwevnzasdf43
+      - USER_ID='docker'    
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000 --settings=dev.settings.dev
+    environment:
+      - DEBUG=False
+      - DATABASE_ENGINE=django.db.backends.postgresql
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password #TODO set on postgres instance
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - SECRET_KEY=fsgsweoriqwevnzasdf43
+      - USER_ID='docker'    
+    volumes:
+      - .:/code
+    ports:
+      - "8001:8000"
+    depends_on:
+      - db
+
+#For debugging purposes, maybe consider using the below container
+# You can run it with docker-compose up bash (with the db etc. up) 
+# And then use docker exec -it <container_name> bash to bash into it and try running stuff
+  bash:
+    build: .
+    command: /bin/sh -c "while true; do sleep 5; date; done"
+    environment:
+      - DEBUG=False
+      - DATABASE_ENGINE=django.db.backends.postgresql
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password #TODO set on postgres instance
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - SECRET_KEY=fsgsweoriqwevnzasdf43
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8001"
+    depends_on:
+      - db
+

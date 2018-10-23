@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Vishaal Chhabria">
+    <title>Recipe App</title>
+<!--    Insert stylesheets up here: <link href="{% static "css/bootstrap.css" %}" rel="stylesheet"> -->
+  </head>
+
+<body >
+<!--    <div id="menubar">
+    <ul>
+     <li><a ui-sref="Overview"></a></li>
+ -->     <!-- Below is how you may implement something to check if the user is logged in -->
+<!--         <li>{% if request.user.is_authenticated %}
+            {% if request.user.first_name or request.user.last_name %}
+                {{ request.user.first_name }} {{ request.user.last_name }}
+            {% else %}  
+                {{ request.user.username }}
+            {% endif %}
+        {% endif %}
+        </li>
+      	
+       
+        	{% if request.user.is_authenticated %}
+       <li style="float:right;"><a href="/accounts/logout/" class="pull-right">Sign out</a></li>
+            	{% else %}
+       <li style="float:right;"><a href="/accounts/login/" class="pull-right">Sign in</a></li>
+           	{% endif %} -->
+<!--     </ul>
+   </div>
+ -->
+   
+  <div class="starter-template">
+      {% block content %}
+
+
+      {% endblock %}
+        
+  </div>
+ 
+
+	<!-- Bootstrap core JavaScript --><!-- 
+	<script src="{% static "javascript/jquery.min.js"%}"></script>
+	<script src="{% static "javascript/bootstrap.js"%}"></script> -->
+	<!-- Bootstrap core JavaScript -->
+	<!-- Page Specific Plugins -->
