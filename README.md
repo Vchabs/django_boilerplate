@@ -12,7 +12,7 @@ You should need to use Docker Compose to get this app running. To do so:
 ## To load sample data:
 		docker-compose up load_sample_data
 
-## to run the app:
+## To run the app:
         docker-compose up web
 
 ## Navigate to:
@@ -27,3 +27,11 @@ You should need to use Docker Compose to get this app running. To do so:
 ## Home page is:
 
 	http://localhost:8001/home/
+
+## For Cornell Tech students:
+
+If you used this, cite it in your README (This was from Khoa) file like this:
+
+###### Thanks to:
+We used Django boilerplate found here: https://github.com/Vchabs/django_boilerplate 
+Made by: Vishaal Chhabria and Omari "Thunder" Powell to get rolling
