@@ -23,6 +23,6 @@ url(r'^api/v1.0/scenario/',include('scenario.api_urls'))
 ]
 
 urlpatterns = [
-    url(r'^/',Home.as_view(),name='home'),
+    url(r'^',Home.as_view(),name='home'),
 ]
 urlpatterns+=api_urls
