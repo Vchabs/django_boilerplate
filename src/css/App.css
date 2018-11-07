@@ -1,0 +1,262 @@
+body,html, #root{
+  font-family: "Brandon Grotesque";
+  font-weight: 400;
+  background: white;
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  background: rgba(4,120,225,.74);
+    background: -moz-linear-gradient(to right,rgba(4,120,225,.9) 0%,rgba(187,14,255,.84) 100%);
+    background: -webkit-linear-gradient(to right,rgba(4,120,225,.9) 0%,rgba(187,14,255,.84) 100%);
+    background: linear-gradient(to right,rgba(4,120,225,.9) 0%,rgba(153, 9, 210, 0.84) 120%);
+    min-height: 100%;
+    width: 100%;
+
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.finances {
+    background: white;
+    border-radius: 2px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-sizing: border-box;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow:6px 3px 8px rgba(0, 0, 0, 0.086);
+    margin-left: 35px;
+    text-align: left;
+    border-image: -moz-linear-gradient(to right,rgba(4,120,225,.9) 0%,rgba(187,14,255,.84) 120%);
+    border-image: -webkit-linear-gradient(to right,rgba(4,120,225,.9) 0%,rgba(187,14,255,.84) 120%);
+    border-image: linear-gradient(to right,rgba(4, 113, 225, 0.9) 0%,rgba(187,14,255,.784) 120%);
+    border-image-slice: 1;
+    border-width: 0px;
+    border-bottom-width: 8px;
+    border-style: dashed;
+    min-width: 300px;
+}
+
+
+.finances::before {
+    content: " ";
+    background: #eaeaea;
+    height: 3px;
+    width: 27px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    display: block;
+    border-radius: 100px;
+}
+
+
+.game {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.scene {
+    display: block;
+    flex: 1 1;
+    box-sizing: border-box;
+    min-width: 350px;
+    padding: 0px 50px;
+    margin: 0px 10px;
+    /* flex: 1 1 auto; */
+    max-width: 800px;
+}
+
+.scenario {
+        background: rgba(255, 255, 255, 0);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 100%;
+    min-height: 300px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+    border: solid 8px white;
+    color: white;
+}
+
+
+.sc-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    /* opacity: .4; */
+}
+
+.scenario .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 15px 0px;
+}
+
+
+.scenario-text {
+        font-size: 33px;
+    /* text-shadow: 2px 1px rgba(0, 0, 0, 0.10980392156862745); */
+    font-weight: 500;
+    box-sizing: BORDER-BOX;
+    padding: 10px;
+    padding-top: 0px;
+    line-height: 1.3em;
+    /* font-family: "Open sans"; */
+    text-transform: none;
+    margin-top: 5px;
+}
+
+.scenario-text::before {
+    display: block;
+    content: " ";
+    background: white;
+    width: 80px;
+    height: 8px;
+    border-radius: 1px;
+    margin-bottom: 15px;
+}
+.month-holder {
+    width: 100%;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    z-index: 5;
+}
+
+#finances-title {
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin: 5px auto;
+    color: #2d2d2d;
+    position: relative;
+}
+
+.fhealth, .expenses, .debt {
+    padding: 5px;
+    letter-spacing: 0.14em;
+    text-transform: lowercase;
+    color: #2d2d2d;
+}
+
+.month {
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 50000;
+    color: white;
+    margin: 20px;
+    display: inline-block;
+    opacity: .5;
+    -webkit-transition: all .25s linear;
+-moz-transition: all .25s linear;
+-ms-transition: all .25s linear;
+-o-transition: all .25s linear;
+transition: all .25s linear;
+}
+
+.active {
+  opacity: 1;
+}
+
+.month::before {
+    content: " ";
+    position: relative;
+    top: 0px;
+    left: calc(0px - 20%);
+    width: 140%;
+    margin: AUTO;
+    height: 3px;
+    background: white;
+    display: block;
+    border-radius: 3px;
+}
+
+
+.buttons-holder button {
+    padding: 10px;
+    margin: 5px 10px 5px 0px;
+    border-radius: 2px;
+    border: solid 5px white;
+    background: white;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    color: #6262e2;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+button.false-button {
+    background: transparent;
+    color: white;
+    
+}
+.expenses span, .fhealth span, .debt span {
+    font-weight: 500;
+        font-size: 18px;
+}
+
+.blue {
+  color: #2798ff !important;
+}
+
+.red {
+  color:#e82020 !important;
+}
+
+.fhealth span {
+    color: #2281e8;
+}
+
+.debt span {
+    font-weight: 700;
+    color: #080808;
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
