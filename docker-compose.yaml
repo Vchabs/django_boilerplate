@@ -1,78 +1,18 @@
-version: '3'
+version: '3.8'
 
 services:
   db:
     environment:
       - PGDATA= /var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=password
     image: postgres
     volumes: 
       - ./postgres_data:/var/lib/postgresql/data/pgdata
-  makemigrations:
-    build: .
-    command: python3 manage.py makemigrations --settings=dev.settings.dev
-    environment:
-      - DEBUG=False
-      - DATABASE_ENGINE=django.db.backends.postgresql
-      - DATABASE_NAME=postgres
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password #TODO set on postgres instance
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - SECRET_KEY=fsgsweoriqwevnzasdf43
-      - USER_ID='docker'    
-    volumes:
-      - .:/code
-    depends_on:
-      - db
-
-  migrate:
-    build: .
-    command: python3 manage.py migrate --settings=dev.settings.dev
-    environment:
-      - DEBUG=False
-      - DATABASE_ENGINE=django.db.backends.postgresql
-      - DATABASE_NAME=postgres
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password #TODO set on postgres instance
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - SECRET_KEY=fsgsweoriqwevnzasdf43
-      - USER_ID='docker'    
-    volumes:
-      - .:/code
-    depends_on:
-      - db
-  load_sample_data:
-    build: .
-    command: python3 manage.py load_scenario_data
-    environment:
-      - DEBUG=False
-      - DATABASE_ENGINE=django.db.backends.postgresql
-      - DATABASE_NAME=postgres
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password #TODO set on postgres instance
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - SECRET_KEY=fsgsweoriqwevnzasdf43
-      - USER_ID='docker'    
-    volumes:
-      - .:/code
-    depends_on:
-      - db
 
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000 --settings=dev.settings.dev
-    environment:
-      - DEBUG=False
-      - DATABASE_ENGINE=django.db.backends.postgresql
-      - DATABASE_NAME=postgres
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password #TODO set on postgres instance
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - SECRET_KEY=fsgsweoriqwevnzasdf43
-      - USER_ID='docker'    
+    env_file: .dockerenv
     volumes:
       - .:/code
     ports:
@@ -86,19 +26,16 @@ services:
   bash:
     build: .
     command: /bin/sh -c "while true; do sleep 5; date; done"
-    environment:
-      - DEBUG=False
-      - DATABASE_ENGINE=django.db.backends.postgresql
-      - DATABASE_NAME=postgres
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password #TODO set on postgres instance
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - SECRET_KEY=fsgsweoriqwevnzasdf43
+    env_file: .dockerenv
     volumes:
       - .:/code
     ports:
       - "8000:8001"
     depends_on:
       - db
-
+#Note, when you move to microservices, look up external networks, you can actually configure
+# one network for a specific project and then have containers from other proejcts talk to the same network
+# useful when you have many projects that are supposed to have components talking to each other.
+networks:
+  default:
+    driver: bridge

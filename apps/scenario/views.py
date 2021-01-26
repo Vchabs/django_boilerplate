@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from .serializers import ScenarioSerializer
 from .filters import ScenarioFilterSet
 from .models import Scenario
@@ -10,4 +11,5 @@ class ScenarioViewSet(viewsets.ModelViewSet):
     queryset = Scenario.objects.only("scenario_number","item","cost","verbiage")
     serializer_class = ScenarioSerializer
     filter_class = ScenarioFilterSet
+    permission_classes = (IsAuthenticated,)
 

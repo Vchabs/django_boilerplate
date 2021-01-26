@@ -68,6 +68,7 @@ TEMPLATES = [
     'django.template.context_processors.media',
     'django.template.context_processors.static',
     'django.template.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
 
                 # Already defined Django-related contexts here
     'django.template.context_processors.debug',
@@ -128,7 +129,11 @@ REST_FRAMEWORK={
     'DEFAULT_THROTTLE_RATES': {
         'anon': '1000/day',
         'user': '1000/day'
-}
+},
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication'
+    ]
 }
 
 

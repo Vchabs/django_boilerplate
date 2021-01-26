@@ -18,6 +18,14 @@ You should need to use Docker Compose to get this app running. To do so:
 ## Navigate to:
 		localhost:8001
 
+## To create a super user locally:
+In order to use the system that is behind an authentication barrier, you would need a superuser on your local machine. 
+To do this with the web docker container running:
+
+        `docker exec -it <container name> bash`
+        `python manage.py createsuperuser`
+And follow the prompts.
+
 # For Thunder:
 
 ## Your api should be at:
